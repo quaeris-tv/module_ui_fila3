@@ -1,13 +1,9 @@
 <?php return array (
   'fields' => 
   array (
-    'text' => 
+    'method' => 
     array (
-      'label' => 'Testo',
-    ),
-    'level' => 
-    array (
-      'label' => 'Grandezza',
+      'label' => 'method',
     ),
     '_tpl' => 
     array (
