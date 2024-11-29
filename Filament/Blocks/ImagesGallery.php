@@ -40,7 +40,7 @@ class ImagesGallery
                             ->columnSpanFull(),
 
                         Select::make('version')
-                            ->label('version')
+
                             ->required()
                             ->options([
                                 'v1' => 'versione 1',
@@ -49,7 +49,7 @@ class ImagesGallery
                     ])->columnSpanFull(),
 
                 // FileUpload::make('image')
-                //     ->label('Image upload'),
+                //     ,
                 // SpatieMediaLibraryFileUpload::make('image')
                 //         // ->image()
                 //         // ->maxSize(5000)
@@ -64,7 +64,7 @@ class ImagesGallery
                 //     ->directory('photos'),
 
                 // TextInput::make('url')
-                //     ->label('or Image URL'),
+                //     ,
 
                 // Select::make('ratio')
                 //     ->options(static::getRatios())
