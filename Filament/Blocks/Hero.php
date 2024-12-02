@@ -11,6 +11,8 @@ use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
 use Modules\UI\Filament\Forms\Components\RadioImage;
 use Modules\Xot\Actions\View\GetViewsSiblingsAndSelfAction;
 
@@ -23,9 +25,31 @@ class Hero
         $view = 'ui::components.blocks.hero.simple';
         $views = app(GetViewsSiblingsAndSelfAction::class)->execute($view);
         $options = Arr::map($views, function ($view) {
-            return app(\Modules\Xot\Actions\File\AssetAction::class)->execute('ui::img/screenshots/'.$view.'.png');
+            return app(\Modules\Xot\Actions\File\AssetAction::class)
+                ->execute('ui::img/screenshots/'.$view.'.png');
         });
+        // ---------------
 
+        // $files = File::glob(base_path('Modules').'/*/Resources/views/components/blocks/hero/*.blade.php');
+
+        // $opts = Arr::mapWithKeys(
+        //     $files,
+        //     function ($path) {
+        //         $module_low = Str::of($path)->between(DIRECTORY_SEPARATOR.'Modules'.DIRECTORY_SEPARATOR, DIRECTORY_SEPARATOR.'Resources'.DIRECTORY_SEPARATOR)
+        //             ->lower()
+        //             ->toString();
+        //         $info = pathinfo($path);
+        //         $name = Str::of($info['basename'])->before('.blade.php')->toString();
+
+        //         $view = $module_low.'::components.blocks.hero.'.$name;
+        //         $img = app(\Modules\Xot\Actions\File\AssetAction::class)
+        //             ->execute($module_low.'::img/screenshots/'.$name.'.png');
+
+        //         return [$view => $img];
+        //     }
+        // );
+
+        // ---------------
         return Block::make($name)
             ->schema(
                 [
