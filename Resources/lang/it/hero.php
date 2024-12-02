@@ -29,5 +29,9 @@
     array (
       'label' => 'text',
     ),
+    'title' => 
+    array (
+      'label' => 'title',
+    ),
   ),
 );

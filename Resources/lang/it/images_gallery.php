@@ -17,5 +17,9 @@
     array (
       'label' => 'image',
     ),
+    'gallery' => 
+    array (
+      'label' => 'gallery',
+    ),
   ),
 );
