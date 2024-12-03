@@ -25,5 +25,8 @@ return [
         'text' => [
             'label' => 'text',
         ],
+        'title' => [
+            'label' => 'title',
+        ],
     ],
 ];
