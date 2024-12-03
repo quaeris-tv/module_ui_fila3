@@ -33,5 +33,9 @@
     array (
       'label' => 'title',
     ),
+    'view' => 
+    array (
+      'label' => 'view',
+    ),
   ),
 );
