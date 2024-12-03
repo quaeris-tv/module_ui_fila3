@@ -16,5 +16,8 @@ return [
         'image' => [
             'label' => 'image',
         ],
+        'gallery' => [
+            'label' => 'gallery',
+        ],
     ],
 ];
