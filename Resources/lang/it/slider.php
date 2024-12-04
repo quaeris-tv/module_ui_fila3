@@ -1,4 +1,5 @@
-<?php return array (
+<?php 
+return array (
   'fields' => 
   array (
     'method' => 
@@ -14,4 +15,4 @@
       'label' => 'view',
     ),
   ),
-);
+);
