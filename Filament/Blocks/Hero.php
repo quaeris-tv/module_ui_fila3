@@ -33,14 +33,12 @@ class Hero
                         // ->image()
                         ->directory('blocks')
                         ->preserveFilenames(),
-                    // *
+                    /*
                     RadioImage::make('view')
-                        // ->label('layout')
                         ->options($options),
                     // */
                     /*
                     Select::make('_tpl')
-                        ->label('layout')
                         ->options($views),
                     //*/
                     Repeater::make('buttons')
