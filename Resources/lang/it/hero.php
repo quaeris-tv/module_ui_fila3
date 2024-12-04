@@ -28,5 +28,8 @@ return [
         'title' => [
             'label' => 'title',
         ],
+        'view' => [
+            'label' => 'view',
+        ],
     ],
 ];

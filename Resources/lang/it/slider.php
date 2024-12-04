@@ -10,5 +10,8 @@ return [
         '_tpl' => [
             'label' => '_tpl',
         ],
+        'view' => [
+            'label' => 'view',
+        ],
     ],
 ];
