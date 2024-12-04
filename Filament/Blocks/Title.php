@@ -35,7 +35,7 @@ class Title
                         ->afterStateHydrated(static fn ($state, $set) => $state || $set('level', 'h2')),
 
                     Select::make('_tpl')
-                        ->label('layout')
+                        
                         ->options($views),
                 ]
             )

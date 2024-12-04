@@ -18,7 +18,7 @@ class Heading
             ->schema(
                 [
                     TextInput::make('content')
-                        ->label('Heading')
+                        
                         ->required(),
                     Select::make('level')
                         ->options([

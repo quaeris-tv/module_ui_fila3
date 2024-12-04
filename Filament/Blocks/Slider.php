@@ -26,7 +26,7 @@ class Slider
             ->schema(
                 [
                     TextInput::make('method')
-                        ->label('$_theme->{$method}')
+                        
                         ->hint('Inserisci il nome del metodo da richiamare nel tema')
                         ->required(),
 
