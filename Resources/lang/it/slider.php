@@ -9,5 +9,9 @@
     array (
       'label' => '_tpl',
     ),
+    'view' => 
+    array (
+      'label' => 'view',
+    ),
   ),
 );

@@ -4,10 +4,11 @@ declare(strict_types=1);
 
 namespace Modules\UI\Filament\Blocks;
 
-use Filament\Forms\Components\Builder\Block;
-use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Builder\Block;
+use Modules\UI\Filament\Forms\Components\RadioImage;
 use Modules\Xot\Actions\View\GetViewsSiblingsAndSelfAction;
+use Modules\Xot\Actions\Filament\Block\GetViewBlocksOptionsByTypeAction;
 
 class Slider
 {
@@ -15,9 +16,12 @@ class Slider
         string $name = 'slider',
         string $context = 'form',
     ): Block {
-        $view = 'ui::components.blocks.slider.v1';
-        $views = app(GetViewsSiblingsAndSelfAction::class)->execute($view);
-
+        // $view = 'ui::components.blocks.slider.v1';
+        // $views = app(GetViewsSiblingsAndSelfAction::class)->execute($view);
+        // dddx('a');
+        $options = app(GetViewBlocksOptionsByTypeAction::class)
+            ->execute('slider', true);
+        // dddx($options);
         return Block::make($name)
             ->schema(
                 [
@@ -26,12 +30,15 @@ class Slider
                         ->hint('Inserisci il nome del metodo da richiamare nel tema')
                         ->required(),
 
-                    Select::make('_tpl')
-                        ->label('layout')
-                        ->options($views),
+                    // Select::make('_tpl')
+                    //     ->label('layout')
+                    //     ->options($options),
                     // ->afterStateHydrated(static fn ($state, $set) => $state || $set('level', 'h2')),
+
+                    RadioImage::make('view')
+                        ->options($options),
                 ]
             )
-            ->columns('form' === $context ? 2 : 1);
+            ->columns(1);
     }
 }
