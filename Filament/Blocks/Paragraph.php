@@ -25,7 +25,7 @@ class Paragraph
                     TextInput::make('title'),
                     RichEditor::make('text'),
                     Select::make('_tpl')
-                        
+
                         ->options($views),
                 ]
             );

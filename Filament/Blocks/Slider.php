@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Modules\UI\Filament\Blocks;
 
-use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Builder\Block;
+use Filament\Forms\Components\TextInput;
 use Modules\UI\Filament\Forms\Components\RadioImage;
-use Modules\Xot\Actions\View\GetViewsSiblingsAndSelfAction;
 use Modules\Xot\Actions\Filament\Block\GetViewBlocksOptionsByTypeAction;
+use Modules\Xot\Actions\View\GetViewsSiblingsAndSelfAction;
 
 class Slider
 {
@@ -21,12 +21,13 @@ class Slider
         // dddx('a');
         $options = app(GetViewBlocksOptionsByTypeAction::class)
             ->execute('slider', true);
+
         // dddx($options);
         return Block::make($name)
             ->schema(
                 [
                     TextInput::make('method')
-                        
+
                         ->hint('Inserisci il nome del metodo da richiamare nel tema')
                         ->required(),
 
