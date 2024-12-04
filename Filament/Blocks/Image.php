@@ -18,11 +18,9 @@ class Image
         return Block::make($name)
             ->schema(
                 [
-                    FileUpload::make('image')
-                        ,
+                    FileUpload::make('image'),
 
-                    TextInput::make('url')
-                        ,
+                    TextInput::make('url'),
 
                     Select::make('ratio')
                         ->options(static::getRatios())

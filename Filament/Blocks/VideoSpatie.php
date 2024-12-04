@@ -24,7 +24,7 @@ class VideoSpatie
         string $context = 'form',
     ): Block {
         return Block::make($name)
-            
+
             ->schema([
                 Hidden::make('img_uuid')
                     ->default(fn () => Str::uuid()->toString())
@@ -68,7 +68,7 @@ class VideoSpatie
                     ->columnSpanFull(),
                 */
                 TextInput::make('caption')
-                    
+
                 // ->columnSpanFull()
                 ,
 

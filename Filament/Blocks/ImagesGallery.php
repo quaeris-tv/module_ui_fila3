@@ -40,7 +40,7 @@ class ImagesGallery
                             ->columnSpanFull(),
 
                         Select::make('version')
-                            
+
                             ->required()
                             ->options([
                                 'v1' => 'versione 1',
