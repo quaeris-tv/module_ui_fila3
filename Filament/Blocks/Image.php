@@ -19,10 +19,10 @@ class Image
             ->schema(
                 [
                     FileUpload::make('image')
-                        ->label('Image upload'),
+                        ,
 
                     TextInput::make('url')
-                        ->label('or Image URL'),
+                        ,
 
                     Select::make('ratio')
                         ->options(static::getRatios())
