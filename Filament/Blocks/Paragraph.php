@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\UI\Filament\Blocks;
 
+use Filament\Forms\Components\Builder\Block;
+use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\RichEditor;
-use Filament\Forms\Components\Builder\Block;
 // use Modules\Xot\Actions\View\GetViewsSiblingsAndSelfAction;
 use Modules\UI\Filament\Forms\Components\RadioImage;
 use Modules\Xot\Actions\Filament\Block\GetViewBlocksOptionsByTypeAction;
