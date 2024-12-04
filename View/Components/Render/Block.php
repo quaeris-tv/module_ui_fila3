@@ -33,7 +33,8 @@ class Block extends Component
 
         $view = $this->view;
         if (! view()->exists((string) $view)) {
-            $message = 'view not exists ['.$view.']';
+            dddx($this->block);
+            $message = 'view not exists ['.$view.'] !';
             $view_params = [
                 'title' => 'deprecated',
                 'message' => $message,
