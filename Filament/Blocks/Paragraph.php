@@ -29,10 +29,16 @@ class Paragraph
                 [
                     TextInput::make('title'),
                     RichEditor::make('text'),
+<<<<<<< HEAD
                     Select::make('view')
                         ->options($options),
                     RadioImage::make('view')
                         ->options($options),
+=======
+                    Select::make('_tpl')
+
+                        ->options($views),
+>>>>>>> origin/v0.2.10
                 ]
             );
     }
