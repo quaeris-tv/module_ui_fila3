@@ -7,5 +7,8 @@ return [
         'newstate' => [
             'label' => 'newstate',
         ],
+        'pack' => [
+            'label' => 'pack',
+        ],
     ],
 ];
