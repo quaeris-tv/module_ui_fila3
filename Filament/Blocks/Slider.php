@@ -31,9 +31,15 @@ class Slider
                         ->hint('Inserisci il nome del metodo da richiamare nel tema')
                         ->required(),
 
+<<<<<<< HEAD
                     // Select::make('_tpl')
                     //     ->label('layout')
                     //     ->options($options),
+=======
+                    Select::make('_tpl')
+
+                        ->options($views),
+>>>>>>> origin/v0.2.10
                     // ->afterStateHydrated(static fn ($state, $set) => $state || $set('level', 'h2')),
 
                     RadioImage::make('view')
