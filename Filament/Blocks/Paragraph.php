@@ -22,7 +22,7 @@ class Paragraph
         // $views = app(GetViewsSiblingsAndSelfAction::class)->execute($view);
 
         $options = app(GetViewBlocksOptionsByTypeAction::class)
-            ->execute('paragraph', true);
+            ->execute('paragraph', false);
 
         return Block::make($name)
             ->schema(
@@ -31,8 +31,8 @@ class Paragraph
                     RichEditor::make('text'),
                     Select::make('view')
                         ->options($options),
-                    RadioImage::make('view')
-                        ->options($options),
+                    // RadioImage::make('view')
+                    //    ->options($options),
                 ]
             );
     }
