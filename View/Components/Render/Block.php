@@ -44,6 +44,10 @@ class Block extends Component
             return view('ui::alert', $view_params);
         }
         $view_params = $this->block['data'] ?? [];
+        Assert::string($view);
+        if (! view()->exists($view)) {
+            throw new \Exception('view not found ['.$view.']');
+        }
 
         return view($view, $view_params);
     }
