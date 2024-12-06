@@ -28,7 +28,6 @@ class Title // extends XotBaseBlock
                 TextInput::make('text')
                     ->required(),
 
-<<<<<<< HEAD
                 Select::make('level')
                     ->options(
                         [
@@ -45,13 +44,4 @@ class Title // extends XotBaseBlock
         )
         ->columns('form' === $context ? 2 : 1);
 }
-=======
-                    Select::make('_tpl')
-
-                        ->options($views),
-                ]
-            )
-            ->columns('form' === $context ? 2 : 1);
-    }
->>>>>>> origin/v0.2.10
 }

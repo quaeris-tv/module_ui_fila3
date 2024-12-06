@@ -22,23 +22,17 @@ class Paragraph
         // $views = app(GetViewsSiblingsAndSelfAction::class)->execute($view);
 
         $options = app(GetViewBlocksOptionsByTypeAction::class)
-            ->execute('paragraph', true);
+            ->execute('paragraph', false);
 
         return Block::make($name)
             ->schema(
                 [
                     TextInput::make('title'),
                     RichEditor::make('text'),
-<<<<<<< HEAD
                     Select::make('view')
                         ->options($options),
-                    RadioImage::make('view')
-                        ->options($options),
-=======
-                    Select::make('_tpl')
-
-                        ->options($views),
->>>>>>> origin/v0.2.10
+                    // RadioImage::make('view')
+                    //    ->options($options),
                 ]
             );
     }
