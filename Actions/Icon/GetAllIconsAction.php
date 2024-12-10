@@ -32,7 +32,7 @@ class GetAllIconsAction
          *   ]
         ]
          */
-        $icons = Arr::map($icons, function ($set, $name) {
+        $icons = Arr::map($icons, function (array $set, array|string $name) {
             $set['name'] = $name;
             $icons = [];
 

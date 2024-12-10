@@ -9,7 +9,14 @@ use Filament\Forms\Components\TextInput;
 
 class PasswordStrengthField extends TextInput
 {
-    protected string $view = 'ui::ui::filament.forms.components.password-strength';
+    /**
+     * Summary of view.
+     *
+     * @phpstan-var view-string
+     *
+     * @phpstan-ignore property.defaultValue
+     */
+    protected string $view = 'ui::filament.forms.components.password-strength';
 
     public function evaluateStrength(): static
     {

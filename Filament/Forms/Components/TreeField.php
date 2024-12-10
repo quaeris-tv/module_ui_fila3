@@ -12,6 +12,8 @@ class TreeField extends Field
      * Summary of view.
      *
      * @phpstan-var view-string
+     *
+     * @phpstan-ignore property.defaultValue
      */
     protected string $view = 'ui::filament.forms.components.tree';
 }

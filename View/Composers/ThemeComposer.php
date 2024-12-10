@@ -40,6 +40,11 @@ class ThemeComposer
 
     public function flag(string $lang): \Illuminate\View\View
     {
-        return view("ui::svg.flags.{$lang}");
+        $view = "ui::svg.flags.{$lang}";
+        if (! view()->exists($view)) {
+            throw new \Exception('view not exits ['.$view.']');
+        }
+
+        return view($view);
     }
 }
