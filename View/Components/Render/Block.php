@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
 use Illuminate\View\Component;
 use Illuminate\View\View;
+use Webmozart\Assert\Assert;
 
 /**
  * .
@@ -22,7 +23,8 @@ class Block extends Component
         public ?Model $model = null,
         public string $tpl = '',
     ) {
-        $this->view = Arr::get($this->block, 'data.view', null);
+        Assert::string($view = Arr::get($this->block, 'data.view', null));
+        $this->view = $view;
     }
 
     public function render(): ViewFactory|View
@@ -33,8 +35,7 @@ class Block extends Component
 
         $view = $this->view;
         if (! view()->exists((string) $view)) {
-            dddx($this->block);
-            $message = 'view not exists ['.$view.'] !';
+            $message = 'view not exists ['.$view.'] ! <pre>'.print_r($this->block, true).'</pre>';
             $view_params = [
                 'title' => 'deprecated',
                 'message' => $message,
@@ -43,6 +44,10 @@ class Block extends Component
             return view('ui::alert', $view_params);
         }
         $view_params = $this->block['data'] ?? [];
+        Assert::string($view);
+        if (! view()->exists($view)) {
+            throw new \Exception('view not found ['.$view.']');
+        }
 
         return view($view, $view_params);
     }

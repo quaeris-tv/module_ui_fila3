@@ -6,6 +6,7 @@ namespace Modules\UI\Filament\Forms\Components;
 
 use Filament\Forms;
 use Illuminate\Database\Eloquent\Model;
+use Webmozart\Assert\Assert;
 
 // use Squire\Models\Country;
 
@@ -93,6 +94,8 @@ class AddressField extends Forms\Components\Field
 
     public function getRelationship(): string
     {
-        return $this->evaluate($this->relationship) ?? $this->getName();
+        Assert::string($res = $this->evaluate($this->relationship) ?? $this->getName());
+
+        return $res;
     }
 }
