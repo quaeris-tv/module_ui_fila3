@@ -23,7 +23,10 @@ class Block extends Component
         public ?Model $model = null,
         public string $tpl = '',
     ) {
-        Assert::string($view = Arr::get($this->block, 'data.view', null));
+        $view = Arr::get($this->block, 'data.view', null);
+        if($view == null){
+            $view = 'ui::empty';
+        }
         $this->view = $view;
     }
 
