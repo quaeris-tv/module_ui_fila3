@@ -56,6 +56,11 @@ enum TableLayoutEnum: string implements HasColor, HasIcon, HasLabel
         return self::GRID === $this;
     }
 
+    /**
+     * Undocumented function.
+     *
+     * @return array<string, int|null>|null
+     */
     public function getTableContentGrid(): ?array
     {
         $res = $this->isGridLayout()
@@ -69,6 +74,11 @@ enum TableLayoutEnum: string implements HasColor, HasIcon, HasLabel
         return $res;
     }
 
+    /**
+     * Undocumented function.
+     *
+     * @return array<\Filament\Tables\Columns\Column|\Filament\Tables\Columns\ColumnGroup|\Filament\Tables\Columns\Layout\Component>
+     */
     public function getTableColumns(): array
     {
         $trace = debug_backtrace();
