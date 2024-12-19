@@ -27,6 +27,7 @@ class Block extends Component
         if (null == $view) {
             $view = 'ui::empty';
         }
+        Assert::string($view);
         $this->view = $view;
     }
 
