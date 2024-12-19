@@ -10,7 +10,7 @@
             </div>
         </div>
         <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
-            {{--  
+            {{--
             <div class="hidden sm:mb-8 sm:flex sm:justify-center">
                 <div
                     class="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-400 ring-1 ring-white/10 hover:ring-white/20">
@@ -20,17 +20,13 @@
                 </div>
             </div>
 			--}}
-            <div class="text-center">
-                <h1 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">{{ $title }}</h1>
-                @php
-                    $text = str_replace('<p>', '<p class="mt-6 text-lg leading-8 text-gray-300">', $text);
-                @endphp
-                {!! $text !!}
-                <div class="mt-10 flex items-center justify-center gap-x-6">
+            <div class="text-center flex flex-col gap-8">
+                <h1 class="text-4xl font-bold tracking-tight text-white sm:text-4xl">{{ $title }}</h1>
+                <div class="mt-10 flex items-center  justify-center gap-x-12">
                     @foreach ($buttons as $btn)
                         <a href="{{ $btn['link'] }}" class="{{ $btn['class'] }}">{{ $btn['label'] }}</a>
                     @endforeach
-                    {{--  
+                    {{--
                     <a href="#"
                         class="rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400">Get
                         started</a>
@@ -38,6 +34,10 @@
                             aria-hidden="true">→</span></a>
                     -- --}}
                 </div>
+                @php
+                    $text = str_replace('<p>', '<p class="mt-6 leading-normal text-white">', $text);
+                @endphp
+                {!! $text !!}
             </div>
         </div>
         <div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"

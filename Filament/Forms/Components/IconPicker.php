@@ -7,6 +7,7 @@ namespace Modules\UI\Filament\Forms\Components;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Get;
+use Filament\Forms\Set;
 use Illuminate\Support\Arr;
 use Modules\UI\Actions\Icon\GetAllIconsAction;
 use Webmozart\Assert\Assert;
@@ -48,7 +49,7 @@ class IconPicker extends TextInput
                         ->inline()
                         ->inlineLabel(false),
                 ])
-                ->action(function ($data, $set) {
+                ->action(function (array $data, Set $set) {
                     $set('icon', $data['newstate']);
                 })
         );

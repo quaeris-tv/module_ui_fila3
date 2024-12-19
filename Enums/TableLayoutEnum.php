@@ -9,6 +9,7 @@ use Filament\Support\Contracts\HasColor;
 use Filament\Support\Contracts\HasIcon;
 use Filament\Support\Contracts\HasLabel;
 use Illuminate\Support\Arr;
+use Webmozart\Assert\Assert;
 
 enum TableLayoutEnum: string implements HasColor, HasIcon, HasLabel
 {
@@ -55,6 +56,11 @@ enum TableLayoutEnum: string implements HasColor, HasIcon, HasLabel
         return self::GRID === $this;
     }
 
+    /**
+     * Undocumented function.
+     *
+     * @return array<string, int|null>|null
+     */
     public function getTableContentGrid(): ?array
     {
         $res = $this->isGridLayout()
@@ -68,6 +74,11 @@ enum TableLayoutEnum: string implements HasColor, HasIcon, HasLabel
         return $res;
     }
 
+    /**
+     * Undocumented function.
+     *
+     * @return array<\Filament\Tables\Columns\Column|\Filament\Tables\Columns\ColumnGroup|\Filament\Tables\Columns\Layout\Component>
+     */
     public function getTableColumns(): array
     {
         $trace = debug_backtrace();
@@ -84,6 +95,8 @@ enum TableLayoutEnum: string implements HasColor, HasIcon, HasLabel
         $columns = $this->isGridLayout()
             ? $caller->getGridTableColumns()
             : $caller->getListTableColumns();
+
+        Assert::isArray($columns);
 
         return $columns;
     }
