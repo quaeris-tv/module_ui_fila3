@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php return array (
   'fields' => 
   array (
@@ -10,4 +11,20 @@
       'label' => 'content',
     ),
   ),
-);
+);
+=======
+<?php
+
+declare(strict_types=1);
+
+return [
+    'fields' => [
+        'level' => [
+            'label' => 'level',
+        ],
+        'content' => [
+            'label' => 'content',
+        ],
+    ],
+];
+>>>>>>> origin/dev
