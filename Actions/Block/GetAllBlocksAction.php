@@ -23,7 +23,7 @@ class GetAllBlocksAction
         $files = File::glob(base_path('Modules').'/*/Filament/Blocks/*.php');
         $blocks = Arr::map(
             $files,
-            function ($path) {
+            function (string $path) {
                 $class = Str::of($path)
                     ->after(base_path('Modules'))
                     ->prepend('\Modules')
