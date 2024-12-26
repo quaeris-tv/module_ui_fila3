@@ -16,7 +16,7 @@ use function Safe\realpath;
  */
 class UIServiceProvider extends XotBaseServiceProvider
 {
-    public string $module_name = 'ui';
+    public string $name = 'ui';
 
     protected string $module_dir = __DIR__;
 
@@ -29,7 +29,7 @@ class UIServiceProvider extends XotBaseServiceProvider
     {
         parent::boot();
 
-        $components_path = realpath(__DIR__.'/../Resources/views/components');
+        $components_path = realpath(__DIR__.'/../resources/views/components');
         Blade::anonymousComponentPath($components_path);
     }
 
