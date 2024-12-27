@@ -16,7 +16,7 @@ use function Safe\realpath;
  */
 class UIServiceProvider extends XotBaseServiceProvider
 {
-    public string $name = 'ui';
+    public string $name = 'UI';
 
     protected string $module_dir = __DIR__;
 
