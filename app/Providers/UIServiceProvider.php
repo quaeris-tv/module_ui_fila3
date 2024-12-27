@@ -29,11 +29,10 @@ class UIServiceProvider extends XotBaseServiceProvider
     {
         parent::boot();
 
-
         $relativePath = config('modules.paths.generator.component-view.path');
         $components_path = module_path($this->name, $relativePath);
 
-        //$components_path = realpath(__DIR__.'/../resources/views/components');
+        // $components_path = realpath(__DIR__.'/../resources/views/components');
         Blade::anonymousComponentPath($components_path);
     }
 
