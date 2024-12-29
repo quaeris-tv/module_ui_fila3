@@ -7,13 +7,13 @@
         <title>Module UI</title>
 
        {{-- Laravel Vite - CSS File --}}
-       {{-- {{ module_vite('build-ui', 'Resources/assets/sass/app.scss') }} --}}
+       {{-- {{ module_vite('build-ui', 'resources/assets/sass/app.scss') }} --}}
 
     </head>
     <body>
         @yield('content')
 
         {{-- Laravel Vite - JS File --}}
-        {{-- {{ module_vite('build-ui', 'Resources/assets/js/app.js') }} --}}
+        {{-- {{ module_vite('build-ui', 'resources/assets/js/app.js') }} --}}
     </body>
 </html>
