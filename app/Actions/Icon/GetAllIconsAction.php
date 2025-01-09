@@ -28,7 +28,7 @@ class GetAllIconsAction
          *   "class" => ""
          *   "attributes" => []
          *   "paths" => array:1 [▼
-         *      0 => "F:\var\www\_bases\base_fixcity_fila3\laravel\vendor\blade-ui-kit\blade-heroicons\src/../resources/svg"
+         *      0 => "F:\var\www\_bases\base_broker_fila3\laravel\vendor\blade-ui-kit\blade-heroicons\src/../resources/svg"
          *   ]
         ]
          */
