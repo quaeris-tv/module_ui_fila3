@@ -12,6 +12,8 @@ use Modules\Xot\Datas\ComponentFileData;
 use Spatie\LaravelData\DataCollection;
 use Spatie\QueueableAction\QueueableAction;
 
+use function Safe\realpath;
+
 class GetAllBlocksAction
 {
     use QueueableAction;
