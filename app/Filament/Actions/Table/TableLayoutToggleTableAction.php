@@ -47,7 +47,7 @@ class TableLayoutToggleTableAction extends Action
             return TableLayoutEnum::init();
         }
         $res = TableLayoutEnum::TryFrom($layout);
-        if (null !== $res) {
+        if ($res !== null) {
             return $res;
         }
 
