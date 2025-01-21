@@ -4,16 +4,17 @@ declare(strict_types=1);
 
 namespace Modules\UI\Actions\Block;
 
-use function Safe\realpath;
 use Illuminate\Support\Arr;
-use Illuminate\Support\Str;
-use Webmozart\Assert\Assert;
 use Illuminate\Support\Facades\File;
-use Spatie\LaravelData\DataCollection;
+use Illuminate\Support\Str;
+use Modules\Xot\Actions\File\GetClassNameByPathAction;
 use Modules\Xot\Datas\ComponentFileData;
 
+use function Safe\realpath;
+
+use Spatie\LaravelData\DataCollection;
 use Spatie\QueueableAction\QueueableAction;
-use Modules\Xot\Actions\File\GetClassNameByPathAction;
+use Webmozart\Assert\Assert;
 
 class GetAllBlocksAction
 {
@@ -54,5 +55,4 @@ class GetAllBlocksAction
 
         return ComponentFileData::collection($blocks);
     }
-
 }
