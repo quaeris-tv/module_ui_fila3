@@ -4,15 +4,16 @@ declare(strict_types=1);
 
 namespace Modules\UI\Actions\Block;
 
-use Illuminate\Support\Arr;
-use Illuminate\Support\Facades\File;
-use Illuminate\Support\Str;
-use Modules\Xot\Actions\File\GetClassNameByPathAction;
-use Modules\Xot\Datas\ComponentFileData;
-use Spatie\LaravelData\DataCollection;
-use Spatie\QueueableAction\QueueableAction;
-
 use function Safe\realpath;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Str;
+use Webmozart\Assert\Assert;
+use Illuminate\Support\Facades\File;
+use Spatie\LaravelData\DataCollection;
+use Modules\Xot\Datas\ComponentFileData;
+
+use Spatie\QueueableAction\QueueableAction;
+use Modules\Xot\Actions\File\GetClassNameByPathAction;
 
 class GetAllBlocksAction
 {
@@ -23,7 +24,7 @@ class GetAllBlocksAction
      */
     public function execute(string $context = 'form'): DataCollection
     {
-        $relativePath = config('modules.paths.generator.model.path');
+        Assert::string($relativePath = config('modules.paths.generator.model.path'));
 
         $files = File::glob(base_path('Modules').'/*/'.$relativePath.'/../Filament/Blocks/*.php');
 
@@ -53,4 +54,5 @@ class GetAllBlocksAction
 
         return ComponentFileData::collection($blocks);
     }
+
 }
