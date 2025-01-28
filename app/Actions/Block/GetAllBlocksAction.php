@@ -9,10 +9,12 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 use Modules\Xot\Actions\File\GetClassNameByPathAction;
 use Modules\Xot\Datas\ComponentFileData;
-use Spatie\LaravelData\DataCollection;
-use Spatie\QueueableAction\QueueableAction;
 
 use function Safe\realpath;
+
+use Spatie\LaravelData\DataCollection;
+use Spatie\QueueableAction\QueueableAction;
+use Webmozart\Assert\Assert;
 
 class GetAllBlocksAction
 {
@@ -23,7 +25,7 @@ class GetAllBlocksAction
      */
     public function execute(string $context = 'form'): DataCollection
     {
-        $relativePath = config('modules.paths.generator.model.path');
+        Assert::string($relativePath = config('modules.paths.generator.model.path'));
 
         $files = File::glob(base_path('Modules').'/*/'.$relativePath.'/../Filament/Blocks/*.php');
 
