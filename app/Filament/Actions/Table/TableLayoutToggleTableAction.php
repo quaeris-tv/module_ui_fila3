@@ -38,6 +38,7 @@ class TableLayoutToggleTableAction extends Action
         $livewire->layoutView = $newLayout;
         $livewire->dispatch('$refresh');
         $livewire->dispatch('refreshTable');
+        $livewire->resetTable();
     }
 
     protected function getCurrentLayout(): TableLayoutEnum
