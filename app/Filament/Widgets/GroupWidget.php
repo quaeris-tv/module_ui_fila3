@@ -4,20 +4,13 @@ declare(strict_types=1);
 
 namespace Modules\UI\Filament\Widgets;
 
-use Filament\Widgets\Concerns\InteractsWithPageFilters;
 use Filament\Widgets\Widget as BaseWidget;
+use Modules\Xot\Filament\Widgets\XotBaseWidget;
+use Filament\Widgets\Concerns\InteractsWithPageFilters;
 
-class GroupWidget extends BaseWidget
+class GroupWidget extends XotBaseWidget
 {
-    use InteractsWithPageFilters;
-
     public array $widgets = [];
-
-    public string $title = '';
-
-    public string $icon = '';
-
     protected static ?string $pollingInterval = null;
-
-    protected static string $view = 'ui::filament.widgets.group';
+    
 }
