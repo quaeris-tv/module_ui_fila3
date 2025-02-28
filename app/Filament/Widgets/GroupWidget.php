@@ -11,4 +11,5 @@ class GroupWidget extends XotBaseWidget
     public array $widgets = [];
 
     protected static ?string $pollingInterval = null;
+
 }
