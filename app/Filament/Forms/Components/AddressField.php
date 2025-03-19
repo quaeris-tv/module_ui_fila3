@@ -29,7 +29,7 @@ class AddressField extends Forms\Components\Field
                 'state' => null,
                 'zip' => null,
             ];
-            $address = $record?->getRelationValue($this->getRelationship());
+            $address = $record->getRelationValue($this->getRelationship());
             if (null !== $address && is_object($address) && method_exists($address, 'toArray')) {
                 $data = $address->toArray();
             }
@@ -51,7 +51,7 @@ class AddressField extends Forms\Components\Field
     {
         $state = $this->getState();
         $record = $this->getRecord();
-        $relationship = $record?->{$this->getRelationship()}();
+        $relationship = $record->{$this->getRelationship()}();
 
         if (null === $relationship) {
             return;
@@ -62,7 +62,7 @@ class AddressField extends Forms\Components\Field
             $relationship->updateOrCreate($state);
         }
 
-        $record?->touch();
+        $record->touch();
     }
 
     public function getChildComponents(): array
@@ -73,7 +73,7 @@ class AddressField extends Forms\Components\Field
                     Forms\Components\Select::make('country')
                         ->searchable(),
                     // ->getSearchResultsUsing(fn (string $query) => Country::where('name', 'like', "%{$query}%")->pluck('name', 'id'))
-                    // ->getOptionLabelUsing(fn ($value): ?string => Country::firstWhere('id', $value)?->getAttribute('name')),
+                    // ->getOptionLabelUsing(fn ($value): ?string => Country::firstWhere('id', $value)->getAttribute('name')),
                 ]),
             Forms\Components\TextInput::make('street')
 
